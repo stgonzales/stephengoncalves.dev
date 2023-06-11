@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${ubuntu.className}, bg-zinc-900 flex flex-col gap-6`}>
+      <body className={`${ubuntu.className}, bg-zinc-900 flex flex-col gap-12 md:gap-14 lg:gap-16`}>
         <Header/>
         {children}
       </body>
