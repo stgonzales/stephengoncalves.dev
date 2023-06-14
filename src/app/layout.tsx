@@ -1,10 +1,10 @@
 import './globals.css'
 import { Ubuntu } from 'next/font/google'
-import { Header } from '@/components'
+import { Header, Footer } from '@/components'
 
 const ubuntu = Ubuntu({
   subsets: ['latin'],
-  weight: ['300','400','700'],
+  weight: ['300','400','500','700'],
 })
 
 export const metadata = {
@@ -19,9 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${ubuntu.className}, bg-zinc-900 flex flex-col gap-12 md:gap-14 lg:gap-16`}>
-        <Header/>
+      <body className={`${ubuntu.className}, bg-slate-100 flex flex-col gap-12 md:gap-14 lg:gap-16`}>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )

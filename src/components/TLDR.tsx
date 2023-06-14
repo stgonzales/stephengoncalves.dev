@@ -12,9 +12,9 @@ export default function TLDR() {
   return (
     <div id="tldr">
       <div className='flex items-center gap-8 flex-1' onClick={handleOpenTldr}>
-        <p className='font-light italic text-zinc-300'>TL;DR</p>
-        <div className='h-[0.03125rem] bg-zinc-300 flex-1 ' />
-        <ChevronDown size={16} className={`${open ? 'rotate-180' : 'rotate-0'} transition-transform stroke-zinc-300`}/>
+        <p className='font-light italic text-slate-400'>TL;DR</p>
+        <div className='h-[0.03125rem] bg-slate-400 flex-1 ' />
+        <ChevronDown size={16} className={`${open ? 'rotate-180' : 'rotate-0'} transition-transform stroke-slate-400`}/>
       </div>
       {
         open && (

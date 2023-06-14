@@ -7,12 +7,12 @@ export default async function Projects() {
   console.log(result);
   
   return (
-    <main className="w-full max-w-7xl mx-auto py-3 px-6 flex flex-col items-center gap-6">
-      <div className="flex flex-col items-center gap-1">
+    <main className="w-full max-w-7xl mx-auto mt-16 md:mt-64 lg:mt-44 px-6 md:px-20 lg:px-16 xl:px-0 flex flex-col items-center gap-4">
+      <div className="flex flex-col items-center gap-4">
         <h1>Projects</h1>
-        <Link href='https://github.com/stgonzales' className="flex items-center gap-1 text-orange-500">
+        <Link href='https://github.com/stgonzales' target="_blank" className="flex items-center gap-1 text-orange-500">
           <Github className="stroke-orange-500"/>
-          <h3>@stgonzales</h3>
+          {/* <h3>@stgonzales</h3> */}
         </Link>
       </div>
       <div className="flex flex-col items-center justify-center flex-wrap gap-3 md:flex-row">
@@ -28,25 +28,28 @@ type Card = {
   topics: string[];
   homepage: string;
   language: string;
+  html_url: string;
 }
 
-function Card({ name, description, homepage,topics, language }: Card) {
+function Card({ name, description, homepage,topics, language, html_url }: Card) {
   return (
-    <div className="w-full max-w-[327px] min-w-[327px] border border-zinc-300 rounded-lg py-3 px-3 flex flex-col gap-3">
+    <Link href={html_url} className="w-full min-w-[327px] max-w-2xl border border-slate-300 shadow rounded-lg py-3 px-3 flex flex-col gap-3 hover:scale-105 transition-transform">
       <div>
         <p className="font-bold text-orange-500">{name}</p>
-        <p className="font-light text-sm italic">{description}</p>
+        <p className="text-xs">Description: <span className="font-light text-sm italic">{description}</span></p>
       </div>
-      <p className="text-xs">{language}</p>
+      <p className="text-xs font-normal">Language: <span className="font-light">{language}</span></p>
+      {/* Pills */}
       <div className="flex gap-1 flex-wrap">
-        {topics.map(topic => <span key={topic} className="px-2 font-semibold bg-zinc-300 text-orange-800 text-xs rounded-full">{topic}</span>)}
+        <p className="text-xs">Tags:</p>
+        {topics.map(topic => <span key={topic} className="px-2 font-semibold bg-slate-200 text-orange-400 text-xs rounded-full">{topic}</span>)}
       </div>
-      <Link href={homepage}>
+      <Link href={homepage} target="_blank" className="px-4 py-2 rounded-xl border border-orange-500 shadow w-fit">
         <div className="flex gap-2 items-center">
           <RadioTower className='stroke-orange-500' size={16} strokeWidth={2}/>
-          <p className="italic text-sm">Live!</p>
+          <p className="italic text-xs font-medium">Live!</p>
         </div>
       </Link>
-    </div>
+    </Link>
   )
 }

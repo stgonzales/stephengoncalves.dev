@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  @apply text-zinc-50 font-normal
+:root {
+  @apply text-slate-900 text-base font-normal
 }
 
 h1 {
@@ -19,5 +19,5 @@ h1, h3 {
 }
 
 p {
-  @apply text-base md:text-lg lg:text-xl
+  @apply md:text-lg lg:text-xl
 }
