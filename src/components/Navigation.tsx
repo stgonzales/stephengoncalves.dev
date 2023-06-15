@@ -7,7 +7,7 @@ export default function Navigation() {
 
   return (
     <nav className="hidden lg:block">
-      <ul className="flex gap-24 font-medium text-xl">
+      <ul className="flex gap-24 font-medium text-lg">
         <Link href={'/me'} className={`${path === '/me' ? 'text-orange-500 font-bold' : 'hover:text-orange-900'}`}>
           <li>me</li>
           { path === '/me' && <div className="h-[0.190rem] rounded-sm bg-orange-500"></div>}

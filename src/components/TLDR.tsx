@@ -10,11 +10,11 @@ export default function TLDR() {
   }
 
   return (
-    <div id="tldr">
+    <div id="tldr" className="w-full cursor-pointer">
       <div className='flex items-center gap-8 flex-1' onClick={handleOpenTldr}>
-        <p className='font-light italic text-slate-400'>TL;DR</p>
-        <div className='h-[0.03125rem] bg-slate-400 flex-1 ' />
-        <ChevronDown size={16} className={`${open ? 'rotate-180' : 'rotate-0'} transition-transform stroke-slate-400`}/>
+        <p className='font-light italic text-slate-500'>TL;DR</p>
+        <div className='h-[0.03125rem] bg-slate-500 flex-1 ' />
+        <ChevronDown size={20} className={`${open ? 'rotate-180' : 'rotate-0'} transition-transform stroke-slate-500`}/>
       </div>
       {
         open && (

@@ -5,8 +5,8 @@ import { TLDR } from '@/components'
 
 export default function Home() {
   return (
-    <main className="w-full max-w-7xl mx-auto mt-16 md:mt-64 lg:mt-44 px-6 md:px-20 lg:px-16 xl:px-0 flex flex-col items-center md:items-start lg:flex-row md:gap-7 lg:gap-8">
-      <div className='flex flex-col items-center gap-6 md:gap-7 lg:gap-8 lg:items-start flex-1'>
+    <main className="w-full max-w-7xl mx-auto mt-6 mb-16 md:mt-8 md:mb-32 lg:mt-10 px-6 md:px-20 lg:px-16 xl:px-0 flex flex-col items-center md:items-start lg:flex-row md:gap-7 lg:gap-8">
+      <div className='w-full flex flex-col items-center gap-6 md:gap-7 lg:gap-8 lg:items-start flex-1'>
         <div id='heading'>
           <h1>Stephen Goncalves</h1>
           <h3 className='text-orange-500'>Front-end Developer</h3>
@@ -22,11 +22,9 @@ export default function Home() {
             <Mail className='stroke-orange-500 hover:stroke-orange-900' size={24} strokeWidth={2}/>
           </Link>
         </div>
-        <div className='flex flex-col gap-6'>
+        <div id='content' className='w-full flex flex-col gap-6'>
           <p className='text-justify'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+            👋🏾 Hey, I&lsquo;m Stephen <span className='italic text-sm'>(you probably notice hehe)</span><br /><br /> I&lsquo;m a front-end developer based in UK who is passionate about programming <br /> also a husband and father of three.
           </p>
           <TLDR/>
         </div>
