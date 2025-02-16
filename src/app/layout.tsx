@@ -1,15 +1,16 @@
 import './globals.css'
 import { Ubuntu } from 'next/font/google'
-import { Header, Footer } from '@/components'
+import { Footer } from '@/components/layout/footer'
+import { Header } from '@/components/layout/header'
 
 const ubuntu = Ubuntu({
   subsets: ['latin'],
-  weight: ['300','400','500','700'],
+  weight: ['300', '700'],
 })
 
 export const metadata = {
   title: 'Stephen Goncalves',
-  description: 'Here you can find out more about me, my work and my thoughts - kind of.',
+  description: 'Here you can find out more about me',
 }
 
 export default function RootLayout({
@@ -19,9 +20,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${ubuntu.className}, bg-slate-100 flex flex-col gap-12 md:gap-14 lg:gap-16`}>
-        <Header />
-        {children}
+      <body className={`${ubuntu.className}, bg-black px-5 flex justify-center`}>
+        <div className='max-w-[452px] md:max-w-[640px] flex flex-col gap-5 py-44'>
+          <Header />
+          {children}
+        </div>
         <Footer />
       </body>
     </html>

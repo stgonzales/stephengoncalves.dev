@@ -1,23 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
-  @apply text-slate-900 text-base font-normal
-}
-
-h1 {
-  @apply font-bold text-5xl md:text-6xl lg:text-7xl 
-}
-
-h3 {
-  @apply font-light text-2xl md:text-3xl lg:text-4xl
-}
-
-h1, h3 {
-  @apply text-center lg:text-left
-}
-
-p {
-  @apply md:text-lg lg:text-xl
+  @apply text-white text-sm  md:text-base font-light
 }
