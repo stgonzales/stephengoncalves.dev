@@ -119,7 +119,7 @@ function Experience(experience: Experience) {
       <ul className="list-disc list-inside text-start">
         {experience.description.map((description, index) => <li key={index} className="text-base">{description}</li>)}
       </ul>
-      <div className='w-[50px] h-[1px] bg-white rounded-full'></div>
+      <div className='w-[50px] h-px bg-white rounded-full'></div>
     </div>
   )
 }

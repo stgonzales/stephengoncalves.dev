@@ -11,7 +11,7 @@ export function Header() {
           <h2 className='font-bold'>Software Engineer</h2>
         </div>
         <SocialMedia/>
-        <div className='w-full h-[1px] bg-white rounded-full'></div>
+        <div className='w-full h-px bg-white rounded-full'></div>
       </div>
       <Navigation />
     </header>

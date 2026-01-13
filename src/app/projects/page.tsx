@@ -50,7 +50,7 @@ function Card({ name, description, homepage,topics, language, html_url }: Card) 
           </Link>
         </div>
       </div>
-      <div className='w-[50px] h-[1px] bg-white rounded-full'></div>
+      <div className='w-[50px] h-px bg-white rounded-full'></div>
     </div>
   )
 }
