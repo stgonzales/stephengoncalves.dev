@@ -1,13 +1,15 @@
 "use client"
 
-import { Github, Linkedin, Mail, MessageCircle, Download } from "lucide-react"
+import { Mail, MessageCircle, Download } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import Github from "@/components/icons/github"
+import LinkedIn from "@/components/icons/linkedin"
 
 export default function ResumePage() {
   const socialLinks = [
     { icon: Github, href: "https://github.com/stgonzales", label: "GitHub" },
-    { icon: Linkedin, href: "https://www.linkedin.com/in/stephgoncalves", label: "LinkedIn" },
+    { icon: LinkedIn, href: "https://www.linkedin.com/in/stephgoncalves", label: "LinkedIn" },
     { icon: Mail, href: "mailto:stephengoncalves.dev@gmail.com", label: "Email" },
   ]
 
@@ -30,22 +32,37 @@ export default function ResumePage() {
       company: "Motorpoint",
       role: "Software Engineer",
       period: "July 2024 - Present",
-      description:
-        "Help improve and simplify the car-buying process to enhance the customer experience, prioritizing application speed and responsiveness with performance optimizations down to milliseconds. Manage and enhance large-scale applications capable of handling up to 500,000 requests per second.",
+      description: [
+        "Help improve and simplify the car-buying process to enhance the customer experience, prioritizing application speed and responsiveness with performance optimizations down to milliseconds.",
+        "Manage and enhance large-scale applications capable of handling up to 500,000 requests per second.",
+        "Build and maintain customer-facing applications using Node.js, TypeScript, Next.js, and React.",
+        "Contribute to high-traffic, distributed systems with a focus on scalability, observability, and fault tolerance.",
+        "Leverage cloud platforms such as AWS or Azure alongside Git-based workflows to support modern development practices.",
+      ]
     },
     {
       company: "Gigaclear",
       role: "Software Engineer",
       period: "June 2023 - August 2024",
-      description:
-        "Acted as Scrum Master while designing and developing backend services using Node.js and GraphQL, integrating with headless Strapi CMS. Built and maintained Next.js applications consuming GraphQL APIs, enabling efficient data fetching and improved frontend performance.",
+      description: [
+        "Acted as Scrum Master, facilitating sprint planning, retrospectives, and team alignment to keep delivery on track.",
+        "Designed and developed backend services using Node.js and GraphQL, integrating with headless Strapi CMS to expose structured APIs for frontend consumption.",
+        "Built and maintained Next.js applications consuming and maintaining GraphQL APIs, enabling efficient data fetching and improved frontend performance.",
+        "Used PostgreSQL as the primary database for Strapi CMS, managing content, relational data, and migrations.",
+        "Communicated complex technical concepts to users with varying technical backgrounds, ensuring clarity and usability.",
+        "Built strong relationships with end-users, fostering a user-focused approach and improving product adoption and satisfaction.",
+      ]
     },
     {
       company: "Gigaclear",
       role: "Web Developer",
       period: "May 2021 - June 2023",
-      description:
-        "Developed and maintained applications using Node.js, Vue.js, Next.js, headless Strapi CMS and GraphQL. Collaborated closely with DevOps teams to deploy and scale applications on AWS, following best practices for CI/CD and infrastructure.",
+      description: [
+        "Defined and documented requirements for new features and web applications, contributing to product clarity and delivery efficiency.",
+        "Developed and maintained applications using Node.js, Vue.js, Next.js, headless Strapi CMS and GraphQL, improving performance and maintainability.",
+        "Operated and supported production web applications to ensure reliability, availability, and user satisfaction.",
+        "Collaborated closely with DevOps teams to deploy and scale applications on AWS, following best practices for CI/CD and infrastructure",
+      ]
     },
   ]
 
@@ -153,19 +170,20 @@ export default function ResumePage() {
             Experience
           </h2>
           <div className="space-y-6">
-            {experience.map((job, index) => (
+            {experience.map(({ role, period, company, description }, index) => (
               <div
                 key={index}
                 className="group rounded-2xl border border-border/50 bg-card/30 p-6 backdrop-blur-sm transition-all hover:border-border hover:bg-card/50 sm:p-8"
               >
                 <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
-                  <h3 className="text-xl font-semibold text-foreground sm:text-2xl">{job.role}</h3>
-                  <time className="text-sm text-muted-foreground/80">{job.period}</time>
+                  <h3 className="text-xl font-semibold text-foreground sm:text-2xl">{role}</h3>
+                  <time className="text-sm text-muted-foreground/80">{period}</time>
                 </div>
-                <p className="mb-4 text-base font-medium text-foreground/70 sm:text-lg">{job.company}</p>
-                <p className="text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
-                  {job.description}
-                </p>
+                <p className="mb-4 text-base font-medium text-foreground/70 sm:text-lg">{company}</p>
+                {description.map((desc, i) => (
+                <p key={i} className="text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
+                  <span>• </span>{desc}
+                </p>))}
               </div>
             ))}
           </div>
