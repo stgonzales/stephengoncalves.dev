@@ -12,6 +12,7 @@
     "postinstall": "bun run payload:migrate"
   },
   "dependencies": {
+    "@payloadcms/db-vercel-postgres": "^3.71.1",
     "@payloadcms/next": "^3.71.1",
     "@payloadcms/richtext-lexical": "^3.71.1",
     "@payloadcms/sdk": "^3.71.1",
