@@ -9,6 +9,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@payloadcms/db-postgres": "^3.71.1",
     "@payloadcms/next": "^3.71.1",
     "@payloadcms/richtext-lexical": "^3.71.1",
     "@radix-ui/react-dialog": "^1.1.15",
