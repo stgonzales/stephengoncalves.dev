@@ -1,6 +1,6 @@
 import sharp from 'sharp'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
-import { postgresAdapter } from '@payloadcms/db-postgres'
+import { vercelPostgresAdapter } from '@payloadcms/db-vercel-postgres'
 import { buildConfig } from 'payload'
 import { collections } from '@/collections'
 import { globals } from '@/globals'
@@ -10,7 +10,7 @@ export default buildConfig({
   collections,
   globals,
   secret: process.env.PAYLOAD_SECRET || '',
-  db: postgresAdapter({
+  db: vercelPostgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URL,
     },
