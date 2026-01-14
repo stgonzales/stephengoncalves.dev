@@ -11,7 +11,7 @@
     "payload:migrate": "cross-env PAYLOAD_CONFIG_PATH=payload.config.ts payload migrate"
   },
   "dependencies": {
-    "@payloadcms/db-vercel-postgres": "^3.71.1",
+    "@payloadcms/db-postgres": "^3.71.1",
     "@payloadcms/next": "^3.71.1",
     "@payloadcms/richtext-lexical": "^3.71.1",
     "@payloadcms/sdk": "^3.71.1",
