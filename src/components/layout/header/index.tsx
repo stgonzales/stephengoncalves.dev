@@ -35,19 +35,19 @@ export async function Header() {
                 className="text-muted-foreground transition-all hover:scale-110 hover:text-foreground"
                 aria-label={link.label}
               >
-                {/* <socialIconsMap[handler.icon as "github" | "linkedin"].component className="size-5" /> */}
+                <link.icon className="size-5" />
               </Link>
             ))}
 
             <ContactDialog />
 
-            <button
+            {/* <button
               // onClick={handleDownloadPDF}
               className="text-muted-foreground transition-all hover:scale-110 hover:text-foreground"
               aria-label="Download PDF"
             >
-              {/* <Download className="size-5" /> */}
-            </button>
+              <Download className="size-5" />
+            </button> */}
           </div>}
         </header>
     )
