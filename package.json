@@ -8,8 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "payload:migrate": "cross-env PAYLOAD_CONFIG_PATH=payload.config.ts payload migrate",
-    "postinstall": "bun run payload:migrate"
+    "payload:migrate": "cross-env PAYLOAD_CONFIG_PATH=payload.config.ts payload migrate"
   },
   "dependencies": {
     "@payloadcms/db-vercel-postgres": "^3.71.1",
