@@ -23,11 +23,12 @@
         "name": "next"
       }
     ],
+    "baseUrl": "./",
     "paths": {
       "@/*": [
         "./src/*"
       ],
-      "@payload-config": ["./payload.config.ts"]
+      "@payload-config": ["payload.config.ts"]
     }
   },
   "include": [

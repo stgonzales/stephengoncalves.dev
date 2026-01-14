@@ -85,8 +85,14 @@ export interface Config {
     defaultIDType: number;
   };
   fallbackLocale: null;
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    metadata: Metadatum;
+    defaults: Default;
+  };
+  globalsSelect: {
+    metadata: MetadataSelect<false> | MetadataSelect<true>;
+    defaults: DefaultsSelect<false> | DefaultsSelect<true>;
+  };
   locale: null;
   user: User & {
     collection: 'users';
@@ -268,6 +274,90 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "metadata".
+ */
+export interface Metadatum {
+  id: number;
+  seo: {
+    title: string;
+    description: string;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "defaults".
+ */
+export interface Default {
+  id: number;
+  personalDetails: {
+    name: string;
+    role: string;
+    location: string;
+    email: string;
+    phone: number;
+  };
+  socilaLinks?: {
+    handlers?:
+      | {
+          name: string;
+          handler: string;
+          icon: 'github' | 'linkedin' | 'x';
+          id?: string | null;
+        }[]
+      | null;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "metadata_select".
+ */
+export interface MetadataSelect<T extends boolean = true> {
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "defaults_select".
+ */
+export interface DefaultsSelect<T extends boolean = true> {
+  personalDetails?:
+    | T
+    | {
+        name?: T;
+        role?: T;
+        location?: T;
+        email?: T;
+        phone?: T;
+      };
+  socilaLinks?:
+    | T
+    | {
+        handlers?:
+          | T
+          | {
+              name?: T;
+              handler?: T;
+              icon?: T;
+              id?: T;
+            };
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
