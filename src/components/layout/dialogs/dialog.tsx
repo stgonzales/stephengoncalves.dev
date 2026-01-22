@@ -1,12 +1,9 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { cms } from "@/lib/data";
+import { getDefaults } from "@/lib/queries/get-defaults";
 import Link from "next/link";
 
 export async function ContactDialog() {
-    const { personalDetails } = await cms.findGlobal({
-        slug: 'defaults',
-        depth: 2,
-      })
+    const personalDetails = await getDefaults()
 
     return (
         <Dialog>

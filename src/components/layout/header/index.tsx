@@ -2,8 +2,8 @@ import Link from "next/link";
 
 import Github from "@/components/icons/github"
 import LinkedIn from "@/components/icons/linkedin"
-import { cms } from "@/lib/data";
 import { ContactDialog } from "../dialogs/dialog";
+import { getDefaults } from "@/lib/queries/get-defaults";
 
 const socialLinks = [
     { icon: Github, href: "https://github.com/stgonzales", label: "GitHub" },
@@ -11,10 +11,7 @@ const socialLinks = [
 ]
 
 export async function Header() {
-    const { personalDetails } = await cms.findGlobal({
-      slug: 'defaults',
-      depth: 2,
-    })
+    const personalDetails = await getDefaults()
 
     return (
         <header className="mb-16 md:mb-24">
