@@ -1,3 +1,4 @@
+import { revalidatePath } from "next/cache";
 import { GlobalConfig } from "payload";
 
 export const defaults: GlobalConfig = {
@@ -5,7 +6,6 @@ export const defaults: GlobalConfig = {
     label: 'Defaults',
     access: {
       read: () => true,
-      readDrafts: () => true,
     },
     fields: [
       {
@@ -82,5 +82,12 @@ export const defaults: GlobalConfig = {
           }
         ]
       }
-    ]
+    ],
+    hooks: {
+      afterChange: [
+        async () => {
+          revalidatePath('/');
+        }
+      ]
+    }
   }

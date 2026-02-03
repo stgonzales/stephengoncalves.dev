@@ -1,10 +1,10 @@
+import { revalidatePath } from "next/cache";
 import { GlobalConfig } from "payload";
 
 export const metadata: GlobalConfig = {
     slug: 'metadata',
     access: {
       read: () => true,
-      readDrafts: () => true,
     },
     fields: [
       {
@@ -27,4 +27,11 @@ export const metadata: GlobalConfig = {
         ],
       },
     ],
+    hooks: {
+      afterChange: [
+        async () => {
+          revalidatePath('/');
+        }
+      ]
+    }
   }
