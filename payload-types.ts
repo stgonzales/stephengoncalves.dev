@@ -301,7 +301,7 @@ export interface Default {
     email: string;
     phone: number;
   };
-  socilaLinks?: {
+  socialLinks?: {
     handlers?:
       | {
           name: string;
@@ -343,7 +343,7 @@ export interface DefaultsSelect<T extends boolean = true> {
         email?: T;
         phone?: T;
       };
-  socilaLinks?:
+  socialLinks?:
     | T
     | {
         handlers?:

@@ -1,3 +1,5 @@
+import { fileURLToPath } from 'node:url'
+import path from 'path'
 import sharp from 'sharp'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
@@ -5,7 +7,23 @@ import { buildConfig, SanitizedConfig } from 'payload'
 import { collections } from '@/collections'
 import { globals } from '@/globals'
 
+const filename = fileURLToPath(import.meta.url)
+const dirname = path.dirname(filename)
+
 export default buildConfig({
+  admin: {
+    importMap: {
+      baseDir: path.resolve(dirname, 'src'),
+      importMapFile: path.resolve(
+        dirname,
+        'src',
+        'app',
+        '(payload)',
+        'admin',
+        'importMap.ts',
+      ), 
+    },
+  },
   editor: lexicalEditor(),
   collections,
   globals,

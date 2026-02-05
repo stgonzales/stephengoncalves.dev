@@ -46,8 +46,8 @@ export const defaults: GlobalConfig = {
         ]
       },
       {
-        name: 'socilaLinks',
-        label: 'Socal Links',
+        name: 'socialLinks',
+        label: 'Social Links',
         type: 'group',
         fields: [
           {
