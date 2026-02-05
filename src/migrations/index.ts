@@ -1,15 +1,15 @@
-import * as migration_20260203_181312_init from './20260203_181312_init';
-import * as migration_20260203_181402_seed from './20260203_181402_seed';
+import * as migration_20260205_203748_init from './20260205_203748_init';
+import * as migration_20260205_203823_seed_defaults from './20260205_203823_seed_defaults';
 
 export const migrations = [
   {
-    up: migration_20260203_181312_init.up,
-    down: migration_20260203_181312_init.down,
-    name: '20260203_181312_init',
+    up: migration_20260205_203748_init.up,
+    down: migration_20260205_203748_init.down,
+    name: '20260205_203748_init',
   },
   {
-    up: migration_20260203_181402_seed.up,
-    down: migration_20260203_181402_seed.down,
-    name: '20260203_181402_seed'
+    up: migration_20260205_203823_seed_defaults.up,
+    down: migration_20260205_203823_seed_defaults.down,
+    name: '20260205_203823_seed_defaults'
   },
 ];

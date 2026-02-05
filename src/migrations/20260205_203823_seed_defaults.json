@@ -806,37 +806,6 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {},
       "checkConstraints": {}
-    },
-    "hooks": {
-      "name": "hooks",
-      "columns": {
-        "id": {
-          "name": "id",
-          "type": "integer",
-          "primaryKey": true,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "updated_at": {
-          "name": "updated_at",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false
-        },
-        "created_at": {
-          "name": "created_at",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {},
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {},
-      "checkConstraints": {}
     }
   },
   "views": {},
@@ -848,6 +817,6 @@
   "internal": {
     "indexes": {}
   },
-  "id": "dfc09ffa-b473-4510-853f-c37c8fbddb41",
+  "id": "7bfc88ea-b746-4d6d-954f-e31372e9773b",
   "prevId": "00000000-0000-0000-0000-000000000000"
 }

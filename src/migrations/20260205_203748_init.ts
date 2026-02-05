@@ -125,12 +125,6 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   	\`created_at\` text
   );
   `)
-  await db.run(sql`CREATE TABLE \`hooks\` (
-  	\`id\` integer PRIMARY KEY NOT NULL,
-  	\`updated_at\` text,
-  	\`created_at\` text
-  );
-  `)
 }
 
 export async function down({ db, payload, req }: MigrateDownArgs): Promise<void> {
@@ -145,5 +139,4 @@ export async function down({ db, payload, req }: MigrateDownArgs): Promise<void>
   await db.run(sql`DROP TABLE \`metadata\`;`)
   await db.run(sql`DROP TABLE \`defaults_socila_links_handlers\`;`)
   await db.run(sql`DROP TABLE \`defaults\`;`)
-  await db.run(sql`DROP TABLE \`hooks\`;`)
 }

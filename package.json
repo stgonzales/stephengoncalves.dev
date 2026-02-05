@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "dev:replica": "turso db shell prod .dump > dump.sql && cat dump.sql | sqlite3 payload.db && rm dump.sql && next dev",
+    "build": "bun run payload migrate && next build",
     "start": "next start",
-    "lint": "eslint .",
-    "payload:migrate": "cross-env PAYLOAD_CONFIG_PATH=payload.config.ts payload migrate"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@payloadcms/db-sqlite": "^3.74.0",
