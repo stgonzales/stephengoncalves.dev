@@ -1,5 +1,3 @@
-"use client"
-
 import { AnimatedBlobs } from "@/components/animated/background"
 import { Header } from "@/components/layout/header"
 import { AboutMe } from "@/components/layout/sections/about-me"
