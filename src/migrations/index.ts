@@ -1,6 +1,7 @@
 import * as migration_20260205_203748_init from './20260205_203748_init';
 import * as migration_20260205_203823_seed_defaults from './20260205_203823_seed_defaults';
 import * as migration_20260205_211900_rename_social_links from './20260205_211900_rename_social_links';
+import * as migration_20260206_185505_localization from './20260206_185505_localization';
 
 export const migrations = [
   {
@@ -17,5 +18,10 @@ export const migrations = [
     up: migration_20260205_211900_rename_social_links.up,
     down: migration_20260205_211900_rename_social_links.down,
     name: '20260205_211900_rename_social_links',
+  },
+  {
+    up: migration_20260206_185505_localization.up,
+    down: migration_20260206_185505_localization.down,
+    name: '20260206_185505_localization'
   },
 ];
