@@ -27,6 +27,28 @@ export default buildConfig({
   editor: lexicalEditor(),
   collections,
   globals,
+  localization: {
+    locales: [
+      {
+        code: 'en',
+        label: 'English',
+      },
+      {
+        code: 'en-US',
+        label: 'English (United States)',
+      },
+      {
+        code: 'pt',
+        label: 'Portuguese (Portugal)',
+      },
+      {
+        code: 'pt-BR',
+        label: 'Portuguese (Brazil)',
+      }
+    ],
+    defaultLocale: 'en',
+    fallback: true,
+  },
   secret: process.env.PAYLOAD_SECRET || '',
   db: sqliteAdapter({
     client: {
