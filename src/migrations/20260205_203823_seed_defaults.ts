@@ -4,7 +4,7 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   // Insert parent first: defaults_socila_links_handlers has FK _parent_id -> defaults(id)
   await db.run(sql`
     INSERT INTO defaults (personal_details_name, personal_details_role, personal_details_location, personal_details_email, personal_details_phone, updated_at, created_at)
-    VALUES ('Stephen Goncalves', 'Software Engineer', 'Notthingham, UK', 'stephen@stephengoncalves.dev', '4407590775593', datetime('now'), datetime('now'));
+    VALUES ('Stephen Goncalves', 'Software Engineer', 'Notthingham, UK', 'stephengoncalves.dev@gmail.com', '4407590775593', datetime('now'), datetime('now'));
   `)
 
   await db.run(sql`
