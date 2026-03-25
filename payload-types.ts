@@ -84,16 +84,23 @@ export interface Config {
   db: {
     defaultIDType: number;
   };
-  fallbackLocale: null;
+  fallbackLocale:
+    | ('false' | 'none' | 'null')
+    | false
+    | null
+    | ('en' | 'en-US' | 'pt' | 'pt-BR')
+    | ('en' | 'en-US' | 'pt' | 'pt-BR')[];
   globals: {
     metadata: Metadatum;
     defaults: Default;
+    'about-me': AboutMe;
   };
   globalsSelect: {
     metadata: MetadataSelect<false> | MetadataSelect<true>;
     defaults: DefaultsSelect<false> | DefaultsSelect<true>;
+    'about-me': AboutMeSelect<false> | AboutMeSelect<true>;
   };
-  locale: null;
+  locale: 'en' | 'en-US' | 'pt' | 'pt-BR';
   user: User & {
     collection: 'users';
   };
@@ -316,6 +323,16 @@ export interface Default {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "about-me".
+ */
+export interface AboutMe {
+  id: number;
+  content: string;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "metadata_select".
  */
 export interface MetadataSelect<T extends boolean = true> {
@@ -355,6 +372,16 @@ export interface DefaultsSelect<T extends boolean = true> {
               id?: T;
             };
       };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "about-me_select".
+ */
+export interface AboutMeSelect<T extends boolean = true> {
+  content?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
